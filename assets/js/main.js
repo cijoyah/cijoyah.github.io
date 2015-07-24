@@ -1,5 +1,5 @@
 /*
-	Telephasic by HTML5 UP
+	Twenty by HTML5 UP
 	html5up.net | @n33co
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
@@ -7,17 +7,19 @@
 (function($) {
 
 	skel.breakpoints({
+		wide: '(max-width: 1680px)',
 		normal: '(max-width: 1280px)',
-		narrow: '(max-width: 1080px)',
-		narrower: '(max-width: 820px)',
-		mobile: '(max-width: 736px)',
-		mobilep: '(max-width: 480px)'
+		narrow: '(max-width: 980px)',
+		narrower: '(max-width: 840px)',
+		mobile: '(max-width: 736px)'
 	});
 
 	$(function() {
 
 		var	$window = $(window),
-			$body = $('body');
+			$body = $('body'),
+			$header = $('#header'),
+			$banner = $('#banner');
 
 		// Disable animations/transitions until the page has loaded.
 			$body.addClass('is-loading');
@@ -25,6 +27,10 @@
 			$window.on('load', function() {
 				$body.removeClass('is-loading');
 			});
+
+		// CSS polyfills (IE<9).
+			if (skel.vars.IEVersion < 9)
+				$(':last-child').addClass('last-child');
 
 		// Fix: Placeholder polyfill.
 			$('form').placeholder();
@@ -37,16 +43,17 @@
 				);
 			});
 
-		// CSS polyfills (IE<9).
-			if (skel.vars.IEVersion < 9)
-				$(':last-child').addClass('last-child');
+		// Scrolly links.
+			$('.scrolly').scrolly({
+				speed: 1000,
+				offset: -10
+			});
 
 		// Dropdowns.
 			$('#nav > ul').dropotron({
 				mode: 'fade',
-				speed: 300,
-				alignment: 'center',
-				noOpenerFade: true
+				noOpenerFade: true,
+				expandMode: (skel.vars.touch ? 'click' : 'hover')
 			});
 
 		// Off-Canvas Navigation.
@@ -63,7 +70,6 @@
 				$(
 					'<div id="navPanel">' +
 						'<nav>' +
-							'<a href="index.html" class="link depth-0">Home</a>' +
 							$('#nav').navList() +
 						'</nav>' +
 					'</div>'
@@ -72,9 +78,10 @@
 					.panel({
 						delay: 500,
 						hideOnClick: true,
+						hideOnSwipe: true,
 						resetScroll: true,
 						resetForms: true,
-						side: 'top',
+						side: 'left',
 						target: $body,
 						visibleClass: 'navPanel-visible'
 					});
@@ -83,6 +90,28 @@
 				if (skel.vars.os == 'wp' && skel.vars.osVersion < 10)
 					$('#navButton, #navPanel, #page-wrapper')
 						.css('transition', 'none');
+
+		// Header.
+		// If the header is using "alt" styling and #banner is present, use scrollwatch
+		// to revert it back to normal styling once the user scrolls past the banner.
+		// Note: This is disabled on mobile devices.
+			if (!skel.vars.mobile
+			&&	$header.hasClass('alt')
+			&&	$banner.length > 0) {
+
+				$window.on('load', function() {
+
+					$banner.scrollwatch({
+						delay:		0,
+						range:		1,
+						anchor:		'top',
+						on:			function() { $header.addClass('alt reveal'); },
+						off:		function() { $header.removeClass('alt'); }
+					});
+
+				});
+
+			}
 
 	});
 

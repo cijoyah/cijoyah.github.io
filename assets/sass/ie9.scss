@@ -1,15 +1,18 @@
 @import 'libs/vars';
 @import 'libs/functions';
 @import 'libs/mixins';
+@import 'libs/skel';
 
 /*
-	Telephasic by HTML5 UP
+	Twenty by HTML5 UP
 	html5up.net | @n33co
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-/* Wrappers */
+/* Banner */
 
-	#header-wrapper {
-		background-image: none;
+	#banner {
+		.inner {
+			opacity: 1.0;
+		}
 	}
