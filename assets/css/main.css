@@ -2741,7 +2741,7 @@
 
 		/* Button */
 
-			input[type="button"].small,
+/*			input[type="button"].small,
 			input[type="submit"].small,
 			input[type="reset"].small,
 			.button.small {
@@ -2749,7 +2749,7 @@
 				min-width: 18em;
 				padding: 0.75em 0;
 			}
-
+*/
 		/* List */
 
 			ul.featured-icons {
@@ -2840,7 +2840,7 @@
 				padding-bottom: 1px;
 			}
 
-			#navButton {
+/*			#navButton {
 				-moz-backface-visibility: hidden;
 				-webkit-backface-visibility: hidden;
 				-ms-backface-visibility: hidden;
@@ -2902,7 +2902,7 @@
 						position: absolute;
 						top: 10px;
 						width: 60px;
-					}
+					}*/
 
 			#navPanel {
 				-moz-backface-visibility: hidden;
