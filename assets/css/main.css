@@ -1684,6 +1684,11 @@
 			padding-top: 1.5em;
 		}
 
+		header.closing-link p{
+			background: rgba(0, 0, 0, 0.5);
+			padding: 4rem 0;
+		}
+
 		header.special .icon {
 			cursor: default;
 			height: 7em;
@@ -1693,6 +1698,7 @@
 			top: 1em;
 			width: 100%;
 		}
+
 
 			header.special .icon:before {
 				font-size: 3.5em;
@@ -2095,7 +2101,7 @@
 
 	.wrapper {
 		margin-bottom: 5em;
-		padding: 5em;
+		padding: 2rem 4rem;
 	}
 
 		.wrapper.style1 {
