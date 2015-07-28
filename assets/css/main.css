@@ -305,9 +305,9 @@
 		margin: -75px 0 -1px -75px;
 	}
 
-	.row.\35 0\25 > * {
+/*	.row.\35 0\25 > * {
 		padding: 25px 0 0 25px;
-	}
+	}*/
 
 	.row.\35 0\25 {
 		margin: -25px 0 -1px -25px;
@@ -518,9 +518,9 @@
 			margin: -60px 0 -1px -60px;
 		}
 
-		.row.\35 0\25 > * {
+/*		.row.\35 0\25 > * {
 			padding: 20px 0 0 20px;
-		}
+		}*/
 
 		.row.\35 0\25 {
 			margin: -20px 0 -1px -20px;
@@ -1950,8 +1950,8 @@
 
 	ul.featured-icons {
 		cursor: default;
-		margin: -0.75em 0 0 0;
-		opacity: 0.35;
+		/*margin: -0.75em 0 0 0;*/
+		/*opacity: 0.35;*/
 		overflow: hidden;
 		position: relative;
 	}
@@ -1961,6 +1961,7 @@
 			float: left;
 			text-align: center;
 			width: 50%;
+			margin-top: 1rem;
 		}
 
 			ul.featured-icons li .icon {
@@ -2116,6 +2117,7 @@
 			background-repeat: no-repeat, no-repeat;
 			background-size: 25em, 25em;
 			color: #fff;
+			padding: 2rem;
 		}
 
 			.wrapper.style2 .button:hover {
